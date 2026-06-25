@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CB Accounting — Privacy Policy</title>
+  <style>
+    body { font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+           max-width: 760px; margin: 40px auto; padding: 0 20px; color: #1a1a1a; line-height: 1.6; }
+    h1 { font-size: 1.7rem; } h2 { font-size: 1.15rem; margin-top: 1.8rem; }
+    .meta { color: #666; font-size: .9rem; }
+    code { background: #f4f4f4; padding: 1px 4px; border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <h1>Privacy Policy — CB Accounting</h1>
+  <p class="meta">Effective date: June 25, 2026. Operated by Coinbound ("we", "us").
+     Contact: <a href="mailto:ty@coinbound.io">ty@coinbound.io</a>.</p>
+
+  <p>CB Accounting is an internal bookkeeping-automation tool used by Coinbound to
+     read and organize our own accounting records in QuickBooks Online (QBO). This
+     policy explains what data the tool accesses and how we protect it.</p>
+
+  <h2>What data we access</h2>
+  <p>Through Intuit's QuickBooks Online API, authorized via OAuth 2.0, the tool
+     accesses our company's accounting data: profit-and-loss reports, transactions
+     (invoices, purchases, bills, journal entries), accounts, classes, locations,
+     customers, and vendors. The tool is used only with accounting files that
+     Coinbound owns and controls.</p>
+
+  <h2>How we store and process it</h2>
+  <ul>
+    <li>OAuth tokens are stored encrypted in Google Cloud Secret Manager. They are
+        never written to disk in plaintext or committed to source control.</li>
+    <li>Processing runs inside Google Cloud Platform (Cloud Functions and BigQuery)
+        within an access-controlled project, restricted to least-privilege service
+        accounts.</li>
+    <li>Application endpoints are private and require authentication; they are not
+        exposed publicly.</li>
+  </ul>
+
+  <h2>How we use it</h2>
+  <p>Solely for internal bookkeeping support: classifying transactions by
+     department, producing departmental profit-and-loss reporting, and related
+     reconciliation. We do not use the data for advertising or profiling.</p>
+
+  <h2>Sharing</h2>
+  <p>We do not sell, rent, or share this accounting data with third parties. Data
+     is handled by Coinbound and by Google Cloud as our infrastructure provider,
+     and by Intuit as the source system, under their respective terms.</p>
+
+  <h2>Retention</h2>
+  <p>Derived status data is retained only as long as needed for bookkeeping
+     operations. OAuth tokens are revoked when the integration is disconnected.</p>
+
+  <h2>Your choices</h2>
+  <p>An administrator can disconnect the integration at any time from within
+     QuickBooks Online, which revokes the tool's access.</p>
+
+  <h2>Changes</h2>
+  <p>We may update this policy; material changes will be reflected by a new
+     effective date on this page.</p>
+</body>
+</html>
